@@ -1,0 +1,16 @@
+{% extends "base_user.html" %}
+{% block content %}
+{% if my_regs %}
+    <ul>
+    {% for reg in my_regs %}
+        <li>{{ reg.workout.when }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Registration available</p>
+{% endif %}
+{% endblock %}
+{% block footer %}
+<a href="workout_select" data-ajax="false">הרשמה לאימון</a>
+<a href="logout" data-ajax="false">יציאה</a>
+{% endblock %}
